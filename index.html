@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nurvia Home Healthcare Inc. | Skilled Home Health Care in Chicagoland</title>
+<meta name="description" content="Nurvia Home Healthcare Inc. provides compassionate, skilled home health care across Cook, DuPage &amp; Kane Counties. Skilled nursing, physical, occupational &amp; speech therapy. Medicare accepted. Call 630-206-5080.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#15335d;
+    --navy-deep:#0e2444;
+    --green:#5f9e3f;
+    --green-dark:#497c2d;
+    --green-soft:#eaf3e1;
+    --ink:#1b2a3a;
+    --muted:#5c6b7a;
+    --bg:#ffffff;
+    --bg-soft:#f4f7fb;
+    --line:#e4eaf1;
+    --shadow:0 10px 30px rgba(21,51,93,.10);
+    --shadow-sm:0 4px 14px rgba(21,51,93,.08);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:clip}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;width:100%;max-width:100%}
+  .hero,.strip,.cta-band{max-width:100%;overflow-x:clip}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);line-height:1.2}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 20px}
+  .green{color:var(--green)}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:.18s;white-space:nowrap}
+  .btn-green{background:var(--green);color:#fff;border-color:var(--green)}
+  .btn-green:hover{background:var(--green-dark);border-color:var(--green-dark);transform:translateY(-1px)}
+  .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .btn-navy:hover{background:var(--navy-deep);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--navy);border-color:var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:#fff}
+  .btn-ghost-white{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn-ghost-white:hover{background:#fff;color:var(--navy);border-color:#fff}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  /* Topbar */
+  .topbar{background:var(--navy-deep);color:#dbe6f3;font-size:13.5px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+  .topbar a:hover{color:#fff}
+  .topbar .tb-left{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .topbar .tb-item{display:inline-flex;align-items:center;gap:6px}
+  .topbar svg{width:14px;height:14px;opacity:.85}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:52px;height:52px;object-fit:contain}
+  .brand .bt{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);font-size:19px;line-height:1.05}
+  .brand .bt small{display:block;font-weight:500;font-size:12px;letter-spacing:.14em;color:var(--green-dark);text-transform:uppercase}
+  nav.main{display:flex;align-items:center;gap:26px}
+  nav.main a{font-weight:500;font-size:15px;color:var(--ink);transition:.15s}
+  nav.main a:hover{color:var(--green)}
+  .header-cta{display:flex;align-items:center;gap:12px}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-toggle svg{width:28px;height:28px;color:var(--navy)}
+
+  /* Hero */
+  .hero{position:relative;background:linear-gradient(140deg,var(--navy) 0%,var(--navy-deep) 70%);color:#fff;overflow:hidden}
+  .hero::before{content:"";position:absolute;right:-180px;top:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(95,158,63,.35),transparent 65%);pointer-events:none}
+  .hero::after{content:"";position:absolute;left:-140px;bottom:-160px;width:420px;height:420px;background:radial-gradient(circle,rgba(95,158,63,.18),transparent 65%);pointer-events:none}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:78px}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(95,158,63,.2);border:1px solid rgba(95,158,63,.5);color:#cfe8bd;font-weight:600;font-size:13px;letter-spacing:.04em;padding:7px 15px;border-radius:999px;margin-bottom:22px}
+  .hero h1{color:#fff;font-size:clamp(34px,5vw,52px);font-weight:700;margin-bottom:10px}
+  .hero h1 .hl{color:#9cd178}
+  .hero .sub{font-family:'Poppins',sans-serif;font-weight:500;color:#bcd0e8;font-size:clamp(17px,2.2vw,21px);margin-bottom:18px}
+  .hero p.lead{color:#d6e2f0;font-size:17px;max-width:540px;margin-bottom:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-cta .btn{font-size:17px;padding:16px 30px}
+  .hero-trust{margin-top:30px;display:flex;gap:22px;flex-wrap:wrap;color:#b9cce3;font-size:14px}
+  .hero-trust span{display:inline-flex;align-items:center;gap:7px}
+  .hero-trust svg{width:17px;height:17px;color:#9cd178;flex:none}
+
+  /* Hero photo */
+  .hero-photo{position:relative}
+  .hero-photo img{width:100%;height:100%;max-height:540px;object-fit:cover;object-position:50% 28%;border-radius:22px;box-shadow:0 26px 60px rgba(0,0,0,.34)}
+  .photo-badge{position:absolute;left:-14px;bottom:24px;display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:13px 18px 13px 14px;box-shadow:0 14px 34px rgba(14,36,68,.28)}
+  .photo-badge .pb-ic{flex:none;width:42px;height:42px;border-radius:11px;background:var(--green-soft);display:flex;align-items:center;justify-content:center}
+  .photo-badge .pb-ic svg{width:23px;height:23px;color:var(--green-dark)}
+  .photo-badge strong{display:block;font-family:'Poppins';color:var(--navy);font-size:15px;line-height:1.1}
+  .photo-badge span{font-size:12.5px;color:var(--muted)}
+
+  /* Section base */
+  section.block{padding:70px 0}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 44px}
+  .sec-head .kicker{display:inline-block;color:var(--green-dark);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+  .sec-head h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+  .alt{background:var(--bg-soft)}
+
+  /* Trust strip */
+  .strip{background:var(--green);color:#fff}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:22px 20px;text-align:center}
+  .strip .item{display:flex;flex-direction:column;align-items:center;gap:6px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;padding:6px}
+  .strip svg{width:26px;height:26px}
+  .strip .item span.s{font-weight:400;font-size:13px;opacity:.9;font-family:'Inter'}
+
+  /* Services grid */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow-sm);transition:.2s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cfe0cf}
+  .svc .ic{width:54px;height:54px;border-radius:14px;background:var(--green-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .svc .ic svg{width:28px;height:28px;color:var(--green-dark)}
+  .svc h3{font-size:18.5px;margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:14.5px}
+  .svc-note{margin-top:30px;text-align:center;color:var(--muted);font-size:15px}
+  .svc-note strong{color:var(--navy)}
+
+  /* Why */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .why-item{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+  .why-item .chk{flex:none;width:34px;height:34px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center}
+  .why-item .chk svg{width:19px;height:19px;color:#fff}
+  .why-item h4{font-size:16.5px;margin-bottom:3px}
+  .why-item p{color:var(--muted);font-size:14px}
+
+  /* Areas */
+  .areas{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .area-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+  .area-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 16px;text-align:center;box-shadow:var(--shadow-sm)}
+  .area-card svg{width:30px;height:30px;color:var(--green);margin:0 auto 10px}
+  .area-card h4{font-size:17px}
+  .area-card span{color:var(--muted);font-size:13px}
+  .areas .panel{background:var(--navy);color:#fff;border-radius:20px;padding:34px 30px}
+  .areas .panel h3{color:#fff;font-size:22px;margin-bottom:12px}
+  .areas .panel p{color:#c7d6e8;font-size:15px;margin-bottom:22px}
+  .areas .panel .btn{width:100%}
+
+  /* Insurance */
+  .ins{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  .ins-card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:26px;box-shadow:var(--shadow-sm)}
+  .ins-card h3{font-size:19px;margin-bottom:8px}
+  .ins-card p{color:var(--muted);font-size:15px}
+  .ins-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+  .ins-badges span{background:var(--green-soft);color:var(--green-dark);font-weight:600;font-size:13.5px;padding:8px 14px;border-radius:999px}
+
+  /* CTA band */
+  .cta-band{background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff;text-align:center}
+  .cta-band .wrap{padding:60px 20px}
+  .cta-band h2{color:#fff;font-size:clamp(26px,3.6vw,36px);margin-bottom:12px}
+  .cta-band p{font-size:18px;color:#eaf6e1;max-width:560px;margin:0 auto 28px}
+  .cta-band .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta-band .btn-white{background:#fff;color:var(--green-dark);border-color:#fff}
+  .cta-band .btn-white:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:28px;align-items:stretch}
+  .contact-info{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow-sm)}
+  .ci-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+  .ci-row:last-of-type{border-bottom:none}
+  .ci-ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--green-soft);display:flex;align-items:center;justify-content:center}
+  .ci-ic svg{width:22px;height:22px;color:var(--green-dark)}
+  .ci-row .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:2px}
+  .ci-row .val{font-family:'Poppins';font-weight:600;color:var(--navy);font-size:16px}
+  .ci-row .val a:hover{color:var(--green)}
+  .contact-info .btn{width:100%;margin-top:18px}
+  .contact-map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);min-height:400px}
+  .map-panel{position:relative;width:100%;height:100%;min-height:400px;display:block;
+    background-color:#e9eef2;
+    background-image:
+      repeating-linear-gradient(90deg,transparent 0 72px,rgba(21,51,93,.055) 72px 74px),
+      repeating-linear-gradient(0deg,transparent 0 60px,rgba(21,51,93,.055) 60px 62px),
+      linear-gradient(135deg,rgba(95,158,63,.10),transparent 60%);}
+  .map-panel::before{content:"";position:absolute;top:0;bottom:0;left:38%;width:16px;background:#fbfcfd;transform:skewX(-14deg);box-shadow:0 0 0 1px rgba(21,51,93,.06)}
+  .map-panel::after{content:"";position:absolute;left:0;right:0;top:46%;height:14px;background:#fbfcfd;transform:skewY(-3deg);box-shadow:0 0 0 1px rgba(21,51,93,.06)}
+  .map-link{position:absolute;inset:0;z-index:1}
+  .map-pin{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);z-index:2;pointer-events:none;text-align:center}
+  .map-pin svg{width:52px;height:52px;color:var(--green);filter:drop-shadow(0 6px 10px rgba(21,51,93,.35))}
+  .map-pin .dot{width:14px;height:5px;background:rgba(21,51,93,.3);border-radius:50%;margin:-4px auto 0;filter:blur(1px)}
+  .map-chip{position:absolute;left:16px;right:16px;bottom:16px;z-index:3;background:#fff;border-radius:12px;padding:14px 16px;box-shadow:0 10px 26px rgba(14,36,68,.18);display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .map-chip strong{display:block;font-family:'Poppins';color:var(--navy);font-size:15px}
+  .map-chip span{font-size:13px;color:var(--muted)}
+  .map-chip .map-open{font-family:'Poppins';font-weight:600;color:var(--green-dark);font-size:14px;white-space:nowrap}
+
+  /* Footer */
+  footer{background:var(--navy-deep);color:#c3d2e5;font-size:15px;padding:56px 0 26px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1.1fr;gap:40px}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .foot-brand img{width:50px;height:50px}
+  .foot-brand .bt{font-family:'Poppins';font-weight:700;color:#fff;font-size:18px;line-height:1.1}
+  .foot-brand .bt small{display:block;font-weight:400;font-size:11px;letter-spacing:.12em;color:#9cd178;text-transform:uppercase}
+  footer p.tag{color:#9fb4ce;max-width:320px;font-size:14.5px}
+  footer h4{color:#fff;font-size:15px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;font-family:'Poppins'}
+  footer ul{list-style:none}
+  footer li{margin-bottom:11px;display:flex;align-items:flex-start;gap:10px}
+  footer li svg{width:17px;height:17px;color:#9cd178;flex:none;margin-top:3px}
+  footer a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:#8aa0ba}
+
+  /* Floating mobile call bar */
+  .call-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 14px;gap:10px;box-shadow:0 -6px 20px rgba(21,51,93,.1)}
+  .call-bar .btn{flex:1;font-size:15px;padding:13px}
+
+  /* Modal / multi-step form */
+  .modal{display:none;position:fixed;inset:0;z-index:100;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto}
+  .modal.open{display:flex}
+  .modal-bg{position:fixed;inset:0;background:rgba(14,36,68,.6);backdrop-filter:blur(2px)}
+  .modal-card{position:relative;background:#fff;width:100%;max-width:560px;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.35);margin:auto;overflow:hidden}
+  .modal-head{background:var(--navy);color:#fff;padding:22px 26px;display:flex;align-items:center;gap:14px}
+  .modal-head img{width:42px;height:42px}
+  .modal-head h3{color:#fff;font-size:19px}
+  .modal-head p{color:#bcd0e8;font-size:13px}
+  .modal-close{position:absolute;top:16px;right:18px;background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center}
+  .modal-close:hover{background:rgba(255,255,255,.3)}
+  .progress{height:5px;background:var(--line)}
+  .progress .bar{height:100%;background:var(--green);width:20%;transition:.3s}
+  .modal-body{padding:26px}
+  .step{display:none}
+  .step.active{display:block;animation:fade .25s}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .step .q{font-family:'Poppins';font-weight:600;color:var(--navy);font-size:19px;margin-bottom:4px}
+  .step .qsub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  .opts{display:grid;gap:10px}
+  .opt{display:flex;align-items:center;gap:12px;border:2px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;transition:.15s;font-size:15.5px}
+  .opt:hover{border-color:var(--green)}
+  .opt input{accent-color:var(--green);width:18px;height:18px;flex:none}
+  .opt.sel{border-color:var(--green);background:var(--green-soft)}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-weight:600;font-size:14px;color:var(--navy);margin-bottom:6px}
+  .field input,.field textarea,.field select{width:100%;border:2px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Inter';font-size:15px;transition:.15s}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green)}
+  .field textarea{min-height:76px;resize:vertical}
+  .modal-foot{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+  .err{color:#c0392b;font-size:13px;margin-top:8px;display:none}
+
+  /* Responsive */
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:34px;padding-top:50px;padding-bottom:54px}
+    .hero-card{max-width:440px}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:1fr}
+    .areas{grid-template-columns:1fr}
+    .ins{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .strip .wrap{grid-template-columns:1fr 1fr;gap:18px}
+  }
+  @media(max-width:640px){
+    nav.main,.header-cta .btn-call-head{display:none}
+    .menu-toggle{display:block}
+    nav.main.show{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:16px 20px;gap:16px;box-shadow:var(--shadow)}
+    .svc-grid{grid-template-columns:1fr}
+    .area-cards{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .call-bar{display:flex}
+    body{padding-bottom:70px}
+    .topbar .tb-left{font-size:12.5px;gap:14px}
+    section.block{padding:52px 0}
+  }
+  /* Touch devices: no sticky hover-move on tap */
+  @media(hover:none){
+    .btn:hover,.btn:active{transform:none}
+    .svc:hover{transform:none}
+    .btn-green:active{background:var(--green-dark)}
+  }
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left">
+      <a class="tb-item" href="tel:+16302065080"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>630-206-5080</a>
+      <span class="tb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Fri 9:00 AM – 5:00 PM</span>
+      <span class="tb-item" style="display:none"></span>
+    </div>
+    <div class="tb-left">
+      <span class="tb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Serving Cook, DuPage &amp; Kane Counties</span>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="Nurvia Home Healthcare logo">
+      <div class="bt">Nurvia<br><small>Home Healthcare</small></div>
+    </a>
+    <nav class="main" id="nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why Nurvia</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-green btn-call-head" href="tel:+16302065080">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">◆ Locally Operated &amp; Compassionate Care</span>
+      <h1>Where Healing <span class="hl">Feels Like Home</span></h1>
+      <div class="sub">Your Recovery. Our Commitment.</div>
+      <p class="lead">Nurvia Home Healthcare provides skilled, physician-coordinated care in the comfort of your own home — helping you recover safely, stay independent, and feel supported every step of the way.</p>
+      <div class="hero-cta">
+        <a class="btn btn-green" href="tel:+16302065080">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 630-206-5080
+        </a>
+        <button class="btn btn-ghost-white" onclick="openModal()">
+          Request Care
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+      <div class="hero-trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Licensed Professionals</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Medicare Accepted</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Physician-Coordinated</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="hero.jpg" alt="Nurvia nurse caring for a senior at home">
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="strip">
+  <div class="wrap">
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Licensed &amp; Insured<span class="s">State-certified agency</span>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      Medicare Accepted<span class="s">Most insurance plans</span>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      Physician-Coordinated<span class="s">Care with your doctor</span>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Serving Chicagoland<span class="s">Cook · DuPage · Kane</span>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Our Services</span>
+      <h2>Comprehensive Care Without Leaving Home</h2>
+      <p>From skilled nursing and therapy to daily support, our team delivers safe, reliable, high-quality healthcare in a familiar environment.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Skilled Nursing</h3>
+        <p>Wound care, medication management, injections, vitals monitoring, and post-surgical recovery delivered by licensed nurses.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22V12a4 4 0 0 1 8 0v10"/><path d="M12 12a4 4 0 0 1 8 0v10"/><circle cx="8" cy="5" r="2"/></svg></div>
+        <h3>Physical Therapy</h3>
+        <p>Rebuild strength, balance, and mobility with personalized therapy that helps you move safely and regain independence.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="5" y="9" width="14" height="12" rx="2"/></svg></div>
+        <h3>Occupational Therapy</h3>
+        <p>Regain confidence with everyday activities — dressing, cooking, and self-care — through practical, goal-based support.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11a9 9 0 0 1 18 0v4a3 3 0 0 1-3 3h-1v-6h4"/><path d="M3 15v-4h4v6H6a3 3 0 0 1-3-3z"/></svg></div>
+        <h3>Speech Therapy</h3>
+        <p>Improve communication and swallowing with licensed speech-language pathologists tailored to your recovery goals.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 11h6M19 8v6"/></svg></div>
+        <h3>Medical Social Work</h3>
+        <p>Guidance connecting you to community resources, benefits, and planning support for you and your family.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Home Health Aide</h3>
+        <p>Compassionate help with bathing, grooming, mobility, and daily living to keep you safe and comfortable at home.</p>
+      </div>
+    </div>
+    <p class="svc-note">Also including <strong>wound care</strong>, <strong>medication management</strong>, <strong>post-surgical care</strong>, and <strong>chronic disease management</strong> — all coordinated with your physician.</p>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="block alt" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Why Nurvia</span>
+      <h2>Care You Trust. Comfort You Deserve.</h2>
+      <p>A locally operated agency built on dependable, personalized care and a fast, caring admission process.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Licensed &amp; Experienced Professionals</h4><p>Skilled nurses and therapists you can rely on.</p></div></div>
+      <div class="why-item"><div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Fast Referral &amp; Admission</h4><p>A smooth, prompt start to care when you need it.</p></div></div>
+      <div class="why-item"><div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Physician-Coordinated Treatment</h4><p>We work closely with your doctor on every plan.</p></div></div>
+      <div class="why-item"><div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Most Insurance Plans Accepted</h4><p>Including Medicare as credentialing completes.</p></div></div>
+      <div class="why-item"><div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Personalized Care Plans</h4><p>Built around your medical needs and personal goals.</p></div></div>
+      <div class="why-item"><div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Support You Can Rely On</h4><p>Clear communication for patients and families.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Areas -->
+<section class="block" id="areas">
+  <div class="wrap">
+    <div class="areas">
+      <div>
+        <span class="kicker" style="color:var(--green-dark);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase">Service Areas</span>
+        <h2 style="font-size:clamp(26px,3.6vw,34px);margin:10px 0 12px">Proudly Serving the Chicagoland Area</h2>
+        <p style="color:var(--muted);font-size:16px">Nurvia Home Healthcare provides skilled care to patients throughout Cook, DuPage, and Kane Counties — right where they're most comfortable.</p>
+        <div class="area-cards">
+          <div class="area-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><h4>Cook</h4><span>County</span></div>
+          <div class="area-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><h4>DuPage</h4><span>County</span></div>
+          <div class="area-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><h4>Kane</h4><span>County</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Not sure if we serve your area?</h3>
+        <p>Give us a call — our team will confirm coverage and walk you through getting started with care at home.</p>
+        <a class="btn btn-green" href="tel:+16302065080">Call 630-206-5080</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance -->
+<section class="block alt" id="insurance">
+  <div class="wrap">
+    <div class="ins">
+      <div>
+        <span class="kicker" style="color:var(--green-dark);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase">Insurance &amp; Payment</span>
+        <h2 style="font-size:clamp(26px,3.6vw,34px);margin:10px 0 12px">Coverage Made Simple</h2>
+        <p style="color:var(--muted);font-size:16px;margin-bottom:10px">We plan to accept Medicare and other insurance plans as credentialing and contracting are completed. Our team will help you verify coverage and eligibility so you can focus on recovery.</p>
+        <div class="ins-badges">
+          <span>Medicare</span>
+          <span>Most Insurance Plans</span>
+          <span>Eligibility Check</span>
+        </div>
+      </div>
+      <div class="ins-card">
+        <h3>Verify Your Coverage</h3>
+        <p>Contact our office and we'll confirm your benefits and eligibility — no guesswork, no pressure.</p>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-green" href="tel:+16302065080" style="flex:1">Call Office</a>
+          <button class="btn btn-outline" onclick="openModal()" style="flex:1">Request Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band" id="request">
+  <div class="wrap">
+    <h2>Your Health, Our Priority</h2>
+    <p>Ready to begin care at home? Call us directly, or answer a few quick questions and we'll reach out to you.</p>
+    <div class="btns">
+      <a class="btn btn-white" href="tel:+16302065080">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 630-206-5080
+      </a>
+      <button class="btn btn-navy" onclick="openModal()">Request Care Online</button>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Get In Touch</span>
+      <h2>Contact Nurvia Home Healthcare</h2>
+      <p>Call us, send a request, or visit our Bloomingdale office. We're here Monday–Friday, 9:00 AM–5:00 PM.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="lbl">Phone</div><div class="val"><a href="tel:+16302065080">630-206-5080</a></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+          <div><div class="lbl">Fax</div><div class="val">630-216-5098</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="lbl">Email</div><div class="val"><a href="mailto:admin@nurviahomehealthcare.com">admin@nurviahomehealthcare.com</a></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="lbl">Office</div><div class="val">129 Fairfield Way, Suite 303E<br>Bloomingdale, IL 60108</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="lbl">Hours</div><div class="val">Monday – Friday · 9 AM – 5 PM</div></div>
+        </div>
+        <a class="btn btn-green" href="tel:+16302065080">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 630-206-5080
+        </a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=129+Fairfield+Way+Suite+303E+Bloomingdale+IL+60108" target="_blank" rel="noopener" style="width:100%;margin-top:10px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Get Directions
+        </a>
+      </div>
+      <div class="contact-map">
+        <!--
+          LIVE GOOGLE MAP EMBED — paste this iframe in place of the .map-panel below
+          once the site is hosted on your own domain (the Claude preview blocks external frames):
+          <iframe title="Nurvia Home Healthcare location" style="width:100%;height:100%;min-height:400px;border:0;display:block"
+            src="https://maps.google.com/maps?q=129%20Fairfield%20Way%20Suite%20303E%20Bloomingdale%20IL%2060108&z=15&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        -->
+        <div class="map-panel">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=129+Fairfield+Way+Suite+303E+Bloomingdale+IL+60108" target="_blank" rel="noopener" aria-label="Open Nurvia Home Healthcare location in Google Maps"></a>
+          <div class="map-pin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+            <div class="dot"></div>
+          </div>
+          <div class="map-chip">
+            <div><strong>129 Fairfield Way, Suite 303E</strong><span>Bloomingdale, IL 60108</span></div>
+            <span class="map-open">Open in Maps ›</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="logo.png" alt="Nurvia">
+          <div class="bt">Nurvia<br><small>Home Healthcare Inc.</small></div>
+        </div>
+        <p class="tag">Compassionate, dependable, high-quality skilled home health care — helping patients recover safely and maintain independence at home.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+16302065080">630-206-5080</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Fax: 630-216-5098</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:admin@nurviahomehealthcare.com">admin@nurviahomehealthcare.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg><a href="https://instagram.com/nurviahomehealthcare" target="_blank" rel="noopener">@nurviahomehealthcare</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit / Hours</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>129 Fairfield Way, Suite 303E<br>Bloomingdale, IL 60108</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Monday – Friday<br>9:00 AM – 5:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nurvia Home Healthcare Inc. All rights reserved.</span>
+      <span>Serving Cook, DuPage &amp; Kane Counties, Illinois</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile call bar -->
+<div class="call-bar">
+  <a class="btn btn-green" href="tel:+16302065080">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+  <button class="btn btn-outline" onclick="openModal()">Request Care</button>
+</div>
+
+<!-- Modal: Request Care multi-step -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Request Home Health Services">
+  <div class="modal-bg" onclick="closeModal()"></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <img src="logo.png" alt="">
+      <div>
+        <h3>Request Home Health Services</h3>
+        <p>A few quick questions — takes under a minute.</p>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    </div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="modal-body">
+      <form id="careForm" onsubmit="return submitForm(event)">
+
+        <!-- Step 1 -->
+        <div class="step active" data-step="1">
+          <div class="q">Who needs care?</div>
+          <div class="qsub">Select the person you're requesting care for.</div>
+          <div class="opts" data-group="who">
+            <label class="opt"><input type="radio" name="who" value="Myself">Myself</label>
+            <label class="opt"><input type="radio" name="who" value="My parent">My parent</label>
+            <label class="opt"><input type="radio" name="who" value="My spouse">My spouse</label>
+            <label class="opt"><input type="radio" name="who" value="Someone else">Someone else</label>
+          </div>
+          <div class="err" data-err="1">Please choose an option to continue.</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" data-step="2">
+          <div class="q">What's the main care need?</div>
+          <div class="qsub">Choose all that apply.</div>
+          <div class="opts" data-group="needs">
+            <label class="opt"><input type="checkbox" name="needs" value="Skilled Nursing">Skilled Nursing</label>
+            <label class="opt"><input type="checkbox" name="needs" value="Physical Therapy">Physical Therapy</label>
+            <label class="opt"><input type="checkbox" name="needs" value="Occupational Therapy">Occupational Therapy</label>
+            <label class="opt"><input type="checkbox" name="needs" value="Speech Therapy">Speech Therapy</label>
+            <label class="opt"><input type="checkbox" name="needs" value="Home Health Aide">Home Health Aide</label>
+            <label class="opt"><input type="checkbox" name="needs" value="Not sure yet">Not sure yet</label>
+          </div>
+          <div class="err" data-err="2">Please select at least one option.</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" data-step="3">
+          <div class="q">Is this physician-referred?</div>
+          <div class="qsub">This helps us start care quickly.</div>
+          <div class="opts" data-group="referral">
+            <label class="opt"><input type="radio" name="referral" value="Yes - physician referred">Yes — physician referred</label>
+            <label class="opt"><input type="radio" name="referral" value="Hospital discharge">Hospital discharge</label>
+            <label class="opt"><input type="radio" name="referral" value="No / not yet">No / not yet</label>
+            <label class="opt"><input type="radio" name="referral" value="Not sure">Not sure</label>
+          </div>
+          <div class="err" data-err="3">Please choose an option to continue.</div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step" data-step="4">
+          <div class="q">How will care be paid for?</div>
+          <div class="qsub">We'll help verify your coverage.</div>
+          <div class="opts" data-group="insurance">
+            <label class="opt"><input type="radio" name="insurance" value="Medicare">Medicare</label>
+            <label class="opt"><input type="radio" name="insurance" value="Other insurance">Other insurance</label>
+            <label class="opt"><input type="radio" name="insurance" value="Private pay">Private pay</label>
+            <label class="opt"><input type="radio" name="insurance" value="Not sure">Not sure</label>
+          </div>
+          <div class="err" data-err="4">Please choose an option to continue.</div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step" data-step="5">
+          <div class="q">Where can we reach you?</div>
+          <div class="qsub">Our team will call to complete your request.</div>
+          <div class="field"><label>Full name *</label><input type="text" name="name" required placeholder="First and last name"></div>
+          <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
+          <div class="field"><label>Phone number *</label><input type="tel" name="phone" required placeholder="(630) 000-0000"></div>
+          <div class="field"><label>Best time to call</label>
+            <select name="besttime">
+              <option value="Anytime">Anytime</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+            </select>
+          </div>
+          <div class="field"><label>Anything else we should know?</label><textarea name="notes" placeholder="Optional — tell us about the situation."></textarea></div>
+          <div class="err" data-err="5">Please enter your name and phone number.</div>
+        </div>
+
+        <div class="modal-foot">
+          <button type="button" class="btn btn-outline" id="backBtn" onclick="prevStep()" style="visibility:hidden">Back</button>
+          <button type="button" class="btn btn-green" id="nextBtn" onclick="nextStep()">Continue</button>
+          <button type="submit" class="btn btn-green" id="sendBtn" style="display:none">Send Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile menu
+  var mt=document.getElementById('menuToggle'),navEl=document.getElementById('nav');
+  mt.addEventListener('click',function(){navEl.classList.toggle('show')});
+  navEl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navEl.classList.remove('show')})});
+
+  // Option highlight
+  document.querySelectorAll('.opt').forEach(function(opt){
+    var input=opt.querySelector('input');
+    input.addEventListener('change',function(){
+      var group=opt.closest('.opts');
+      if(input.type==='radio'){
+        group.querySelectorAll('.opt').forEach(function(o){o.classList.remove('sel')});
+        opt.classList.add('sel');
+        setTimeout(function(){if(cur<total)nextStep();},240);
+      }
+      else{opt.classList.toggle('sel',input.checked);}
+    });
+  });
+
+  // Modal + steps
+  var cur=1,total=5;
+  var modal=document.getElementById('modal');
+  function openModal(){modal.classList.add('open');document.body.style.overflow='hidden';goTo(1);}
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+  function goTo(n){
+    cur=n;
+    document.querySelectorAll('.step').forEach(function(s){s.classList.toggle('active',+s.dataset.step===n);});
+    document.getElementById('bar').style.width=(n/total*100)+'%';
+    var back=document.getElementById('backBtn');
+    back.style.visibility='visible';
+    back.disabled=(n===1);
+    back.style.opacity=(n===1)?'.4':'1';
+    back.style.cursor=(n===1)?'not-allowed':'pointer';
+    document.getElementById('nextBtn').style.display=(n===total)?'none':'inline-flex';
+    document.getElementById('sendBtn').style.display=(n===total)?'inline-flex':'none';
+    document.querySelectorAll('.err').forEach(function(e){e.style.display='none';});
+  }
+  function validate(n){
+    if(n===1)return document.querySelector('input[name=who]:checked');
+    if(n===2)return document.querySelector('input[name=needs]:checked');
+    if(n===3)return document.querySelector('input[name=referral]:checked');
+    if(n===4)return document.querySelector('input[name=insurance]:checked');
+    if(n===5)return document.querySelector('input[name=name]').value.trim() && document.querySelector('input[name=phone]').value.trim();
+    return true;
+  }
+  function nextStep(){
+    if(!validate(cur)){document.querySelector('[data-err="'+cur+'"]').style.display='block';return;}
+    if(cur<total)goTo(cur+1);
+  }
+  function prevStep(){if(cur>1)goTo(cur-1);}
+
+  function submitForm(e){
+    e.preventDefault();
+    if(!validate(5)){document.querySelector('[data-err="5"]').style.display='block';return false;}
+    var f=e.target;
+    var who=(document.querySelector('input[name=who]:checked')||{}).value||'';
+    var needs=Array.from(document.querySelectorAll('input[name=needs]:checked')).map(function(c){return c.value;}).join(', ');
+    var referral=(document.querySelector('input[name=referral]:checked')||{}).value||'';
+    var insurance=(document.querySelector('input[name=insurance]:checked')||{}).value||'';
+    var body=
+      'NEW HOME HEALTH CARE REQUEST%0D%0A'+
+      '-----------------------------------%0D%0A'+
+      'Who needs care: '+encodeURIComponent(who)+'%0D%0A'+
+      'Care needs: '+encodeURIComponent(needs)+'%0D%0A'+
+      'Physician referral: '+encodeURIComponent(referral)+'%0D%0A'+
+      'Payment / insurance: '+encodeURIComponent(insurance)+'%0D%0A'+
+      '-----------------------------------%0D%0A'+
+      'Name: '+encodeURIComponent(f.name.value)+'%0D%0A'+
+      'Email: '+encodeURIComponent(f.email.value)+'%0D%0A'+
+      'Phone: '+encodeURIComponent(f.phone.value)+'%0D%0A'+
+      'Best time to call: '+encodeURIComponent(f.besttime.value)+'%0D%0A'+
+      'Notes: '+encodeURIComponent(f.notes.value)+'%0D%0A';
+    var subject=encodeURIComponent('Home Health Care Request — '+f.name.value);
+    window.location.href='mailto:admin@nurviahomehealthcare.com?subject='+subject+'&body='+body;
+    return false;
+  }
+</script>
+</body>
+</html>
